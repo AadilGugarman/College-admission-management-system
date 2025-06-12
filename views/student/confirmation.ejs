@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Confirmation Letter</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  </head>
+  <body>
+    <h1>Admission Confirmation</h1>
+    <div class="confirmation">
+      <p>
+        Congratulations! Your application for <%= application.course_name %> has
+        been approved.
+      </p>
+      <p>Details: <%= application.personal_details.name %></p>
+    </div>
+    <a href="#" onclick="generatePDF()">Download PDF</a>
+    <script>
+      function generatePDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        doc.setFontSize(14);
+        doc.setFont("helvetica", "bold");
+        doc.text("ONLINE UTTARANCHAL UNIVERSITY", 105, 20, { align: "center" });
+        doc.setFontSize(10);
+        doc.setFont("normal");
+        doc.text("NAAC Grade A+ | 20+ Years of Excellence", 105, 26, {
+          align: "center",
+        });
+        doc.text(
+          "Website: www.onlineuu.in | Email: info@onlineuu.in",
+          105,
+          32,
+          { align: "center" }
+        );
+
+        doc.setFontSize(16);
+        doc.setFont("bold");
+        doc.text("ADMISSION CONFIRMATION", 105, 45, { align: "center" });
+
+        doc.setFontSize(10);
+        doc.setFont("normal");
+        const today = new Date().toLocaleDateString();
+        doc.text("Date: " + today, 160, 52);
+
+        doc.setFontSize(12);
+        doc.setFont("bold");
+        doc.text("Student Details", 20, 65);
+
+        doc.setFont("normal");
+        doc.text("Name: <%= application.personal_details.name %>", 20, 75);
+        doc.text("Course: <%= application.course_name %>", 20, 83);
+        doc.text("Mobile: <%= application.personal_details.phone %>", 20, 92);
+        doc.save("confirmation.pdf");
+      }
+    </script>
+  </body>
+</html>

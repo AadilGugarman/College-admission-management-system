@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Application Status</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1>Application Status</h1>
+    <% applications.forEach(app => { %>
+    <div class="application">
+      <h3>Course: <%= app.course_name %></h3>
+      <p>Status: <%= app.status %></p>
+      <% if (app.status === 'Approved') { %>
+      <a href="/student/confirmation/<%= app.id %>">Download Confirmation</a>
+      <% } %>
+    </div>
+    <% }) %>
+  </body>
+</html>

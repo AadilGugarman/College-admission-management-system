@@ -1,7 +1,7 @@
 {
   "name": "collegeadmissionmanagementsystem",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a simple web project made for my BCA 5th semester at Uttaranchal University. It helps students apply for college admission online. Students can register, fill out application forms, upload documents, and check their status. Admins can log in to view and manage all applications.",
   "keywords": [],
   "license": "ISC",
   "author": "Aadil Gugarman",
@@ -11,10 +11,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "ejs": "^3.1.10",
     "ejs-mate": "^4.0.0",
     "express": "^5.1.0",
+    "express-session": "^1.18.1",
     "method-override": "^3.0.0",
+    "multer": "^2.0.1",
     "mysql2": "^3.14.1",
     "uuid": "^11.1.0"
   }

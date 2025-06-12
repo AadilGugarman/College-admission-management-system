@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Application - College Admission</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1>Submit Application</h1>
+    <form
+      action="/student/application"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <input
+        type="text"
+        name="personal_details[name]"
+        placeholder="Full Name"
+        required
+      />
+      <input
+        type="text"
+        name="personal_details[phone]"
+        placeholder="Phone"
+        required
+      />
+      <input
+        type="text"
+        name="academic_details[degree]"
+        placeholder="Last Degree"
+        required
+      />
+      <input
+        type="number"
+        name="academic_details[marks]"
+        placeholder="Marks (%)"
+        required
+      />
+      <select name="course_id" required>
+        <% courses.forEach(course => { %>
+        <option value="<%= course.id %>"><%= course.name %></option>
+        <% }) %>
+      </select>
+      <input type="file" name="document" accept=".pdf,.jpg" required />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

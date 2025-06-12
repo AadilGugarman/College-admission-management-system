@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1>Admin Dashboard</h1>
+    <table>
+      <tr>
+        <th>Student</th>
+        <th>Course</th>
+        <th>Status</th>
+        <th>Document</th>
+        <th>Action</th>
+      </tr>
+      <% applications.forEach(app => { %>
+      <tr>
+        <td><%= app.student_name %></td>
+        <td><%= app.course_name %></td>
+        <td><%= app.status %></td>
+        <td><a href="<%= app.document_path %>">View</a></td>
+        <td>
+          <form action="/admin/application/<%= app.id %>" method="POST">
+            <select name="status">
+              <option value="Approved">Approve</option>
+              <option value="Rejected">Reject</option>
+            </select>
+            <button type="submit">Update</button>
+          </form>
+        </td>
+      </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>
