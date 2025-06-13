@@ -52,6 +52,7 @@ db.connect((err) => {
   console.log('Connected to MySQL');
 });
 
+//Root Route
 app.get('/onlineuu' , (req, res)=>{
   res.render('welcome')
 })
