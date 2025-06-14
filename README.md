@@ -1,6 +1,7 @@
 # College Admission Management System
 
 Project Overview:
+
 The College Admission Management System is a web-based platform built for the BCA 5th Semester curriculum. It streamlines the student admission process through digital registration, application submission, and status tracking, while giving administrators full control to manage the process efficiently.
 
 Tech Stack: HTML, CSS , JavaScript , Node.js, Express.js, EJS, MySQL
