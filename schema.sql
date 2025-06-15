@@ -29,7 +29,6 @@ CREATE TABLE applications (
   FOREIGN KEY (course_id) REFERENCES courses(id)
 );
 
-
 CREATE TABLE admins (
   id INT AUTO_INCREMENT PRIMARY KEY,
   email VARCHAR(255) UNIQUE NOT NULL,

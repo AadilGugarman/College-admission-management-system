@@ -60,8 +60,8 @@ Step 3: Set Up the MySQL Database
 - npm install bcrypt
 - Import the schema.sql file (already included in the project folder)
 - Open schema.sql and replace:
-  - Your_Email_Id'` → your admin email (e.g., 'admin@uu.com')
-  - Your_Hashed_Password'` → generate using:
+  - Your_Email_Id, your admin email (e.g., 'admin@uu.com')
+  - Your_Hashed_Password, generate using:
 - node -e "console.log(require('bcrypt').hashSync('your_password_here', 10))"
 
 Step 3: Open MySQL terminal:
